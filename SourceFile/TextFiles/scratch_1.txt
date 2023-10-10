@@ -1,0 +1,44 @@
+Def DFS (node, path):
+
+    if node is an intersection:
+        save path
+    else:
+        for all neighbours in nodeNeighbours(node):
+            nextNode = neighbour
+            if node is visited or if node != white or node not in image:
+                mark node as visited
+
+            else:
+                Dfs(nextNode, path)
+
+
+
+function Dijkstra(Graph, source):  # Step 1.
+    create empty set visitedNodes
+    create empty map distances
+    create empty map previousNodes
+    initialize distances[source] to 0
+
+    while there are unvisited nodes: step 5
+        current = node with the smallest distance in distances not in visitedNodes # Step 4.
+        add current to visitedNodes # step 3.
+
+        for each neighbor of current: # step 2
+            if neighbor not in visitedNodes:
+                calculate tentative distance from source to neighbor through current
+                if tentative distance < distances[neighbor]:Step 3
+                    update distances[neighbor] to tentative distance
+                    update previousNodes[neighbor] to current
+
+    return distances, previousNodes step 6
+
+
+
+
+function ShortestPath(previousNodes, destination): # making the path
+    create empty list path
+    while destination is not null:
+        add destination to path
+        destination = previousNodes[destination]
+    reverse path
+    return path
